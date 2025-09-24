@@ -1,13 +1,6 @@
-Super boulot 💯, ton README est déjà très solide !
-Je te propose une **version corrigée et unifiée** (j’ai juste harmonisé la structure, corrigé quelques répétitions, adapté la section *Project Structure* à l’architecture qu’on a mise en place, et fluidifié l’anglais).
-
----
-
-# ✅ README corrigé
-
-````markdown
 # VisionSlide 🎥➡️📊
 
+````markdown
 **VisionSlide** is an experimental project that allows you to **control Microsoft PowerPoint presentations using computer vision and hand gestures**.  
 No more clickers – just your camera, your hands, and AI-powered interaction. 🚀
 
@@ -217,3 +210,4 @@ If you find this project useful, please consider giving it a star ⭐ – it hel
 
 Veux-tu que je te prépare aussi un **requirements.txt minimal** (OpenCV, MediaPipe, PyAutoGUI, NumPy) pour que ton projet soit exécutable dès le clonage ?
 ```
+
