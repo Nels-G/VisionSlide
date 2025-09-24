@@ -16,11 +16,11 @@
 
 ---
 
-## 🚀 Overview
+## Overview
 
 **VisionSlide** revolutionizes presentation control by eliminating the need for traditional clickers. Using advanced computer vision and machine learning, it enables seamless PowerPoint navigation through intuitive hand gestures—perfect for modern presentations, remote meetings, and interactive demos.
 
-### 🎯 Why VisionSlide?
+### Why VisionSlide?
 - **Hands-free control** → More natural and engaging presentations
 - **AI-powered accuracy** → Reliable gesture recognition using MediaPipe
 - **Cross-platform support** → Works on Windows, macOS, and Linux
@@ -316,5 +316,6 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 [Get Started](#quick-start) • [View Demo](#demo) • [Contribute](#contributing)
 
 </div>
+
 
 
