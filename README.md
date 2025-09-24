@@ -30,14 +30,14 @@
 
 ## ✨ Features
 
-### 🎮 Current Features (MVP)
+### Current Features (MVP)
 - **Smart gesture recognition** → Next/Previous slide navigation
 - **Real-time hand tracking** → Sub-100ms response time
 - **PowerPoint integration** → Direct keyboard simulation
 - **Configurable sensitivity** → Customizable gesture thresholds
 - **Multi-platform support** → Windows, macOS, Linux compatible
 
-### 🔮 Planned Features
+### Planned Features
 - **Laser pointer simulation** → Virtual pointing during presentations
 - **Zoom/Teams integration** → Screen sharing compatibility
 - **Voice commands** → Hybrid voice + gesture control
@@ -48,7 +48,7 @@
 
 ## 🛠️ Tech Stack
 
-<div align="center">
+<div align="left">
 
 | Technology | Purpose | Version |
 |------------|---------|---------|
@@ -62,7 +62,7 @@
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 ```bash
@@ -129,7 +129,7 @@ visionslide/
 
 ## ⚡ Performance & Accuracy
 
-<div align="center">
+<div align="left">
 
 | Metric | Value | Notes |
 |--------|-------|-------|
@@ -144,7 +144,7 @@ visionslide/
 
 ## 🎬 Demo
 
-<div align="center">
+<div align="left">
 
 *🎥 Demo video coming soon...*
 
@@ -186,7 +186,7 @@ MIN_TRACKING_CONFIDENCE = 0.5        # Hand tracking threshold
 
 ## 🏗️ Development Roadmap
 
-<div align="center">
+<div align="left">
 
 ### Phase 1: Foundation ✅
 - [x] Basic gesture recognition
@@ -278,7 +278,7 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 
 ## 👤 Author
 
-<div align="center">
+<div align="left">
 
 **Nelson Galley (Nels-G)**
 
@@ -316,6 +316,7 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 [Get Started](#quick-start) • [View Demo](#demo) • [Contribute](#contributing)
 
 </div>
+
 
 
 
