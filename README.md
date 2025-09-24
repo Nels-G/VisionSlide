@@ -1,6 +1,6 @@
 # VisionSlide 🎥➡️📊
 
-<div align="center">
+<div align="right">
 
 ![Python](https://img.shields.io/badge/python-v3.9+-blue.svg)
 ![OpenCV](https://img.shields.io/badge/OpenCV-4.8+-green.svg)
@@ -316,3 +316,4 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 [Get Started](#quick-start) • [View Demo](#demo) • [Contribute](#contributing)
 
 </div>
+
