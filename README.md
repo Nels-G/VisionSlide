@@ -1,6 +1,14 @@
+Super boulot 💯, ton README est déjà très solide !
+Je te propose une **version corrigée et unifiée** (j’ai juste harmonisé la structure, corrigé quelques répétitions, adapté la section *Project Structure* à l’architecture qu’on a mise en place, et fluidifié l’anglais).
+
+---
+
+# ✅ README corrigé
+
+````markdown
 # VisionSlide 🎥➡️📊
 
-VisionSlide is an experimental project that allows you to **control Microsoft PowerPoint presentations using computer vision and hand gestures**.  
+**VisionSlide** is an experimental project that allows you to **control Microsoft PowerPoint presentations using computer vision and hand gestures**.  
 No more clickers – just your camera, your hands, and AI-powered interaction. 🚀
 
 ---
@@ -18,7 +26,7 @@ No more clickers – just your camera, your hands, and AI-powered interaction. �
 - **Python 3.9+**
 - [OpenCV](https://opencv.org/) → video capture and image processing
 - [MediaPipe](https://developers.google.com/mediapipe) → hand & gesture detection
-- [PyAutoGUI](https://pyautogui.readthedocs.io/en/latest/) → simulate keyboard control for PowerPoint
+- [PyAutoGUI](https://pyautogui.readthedocs.io/en/latest/) → simulate keyboard input for PowerPoint
 - [NumPy](https://numpy.org/) → mathematical operations
 
 ---
@@ -36,57 +44,89 @@ No more clickers – just your camera, your hands, and AI-powered interaction. �
    ```bash
    git clone https://github.com/your-username/visionslide.git
    cd visionslide
-   ```
+````
 
 2. Install dependencies:
+
    ```bash
    pip install -r requirements.txt
    ```
 
 3. Run the prototype:
+
    ```bash
    python app.py
    ```
 
 ### Usage
+
 1. Open a PowerPoint presentation
 2. Launch VisionSlide
 3. Position yourself in front of your camera
 4. Use the following gestures:
-   - **Next slide**: Point right with index finger
-   - **Previous slide**: Point left with index finger
-   - **Exit**: Close your fist and hold for 2 seconds
+
+   * **Next slide** → Point right with index finger
+   * **Previous slide** → Point left with index finger
+   * **Exit** → Close your fist and hold for 2 seconds
 
 ---
 
 ## 📁 Project Structure
+
 ```
 visionslide/
-├── app.py                 # Main application entry point
-├── gesture_detector.py    # Hand gesture recognition logic
-├── presentation_controller.py # PowerPoint control interface
-├── requirements.txt       # Project dependencies
-├── README.md             # Project documentation
-└── assets/               # Images and demo files
-    └── demo.gif          # Demo video (coming soon)
+├── app.py                  # Main application entry point
+├── requirements.txt        # Project dependencies
+├── README.md               # Project documentation
+├── setup.py                # Packaging configuration
+│
+├── visionslide/            # Core package
+│   ├── __init__.py
+│   ├── config.py
+│   ├── camera/             # Camera management
+│   │   └── camera_stream.py
+│   ├── gestures/           # Hand gesture detection & mapping
+│   │   ├── gesture_detector.py
+│   │   └── gesture_mapping.py
+│   ├── controls/           # Presentation & OS controllers
+│   │   ├── ppt_controller.py
+│   │   ├── os_controller.py
+│   │   └── zoom_controller.py
+│   └── utils/              # Utility functions (logging, helpers)
+│       ├── logger.py
+│       └── helpers.py
+│
+├── tests/                  # Unit tests
+│   ├── test_camera.py
+│   ├── test_gestures.py
+│   └── test_controls.py
+│
+├── assets/                 # Images and demo files
+│   └── demo.gif            # Demo video (coming soon)
+│
+└── docs/                   # Documentation
+    ├── architecture.md
+    └── roadmap.md
 ```
 
 ---
 
 ## 🎯 Roadmap
-- [x] Detect basic gestures (next/previous slide)
-- [ ] Add gesture to exit PowerPoint
-- [ ] Add gesture to activate a laser pointer
-- [ ] Build a GUI to customize gestures
-- [ ] Integration with Zoom/Teams presentations
-- [ ] Support for Google Slides and other presentation software
-- [ ] Voice command integration
-- [ ] Multiple hand gesture combinations
+
+* [x] Detect basic gestures (next/previous slide)
+* [ ] Add gesture to exit PowerPoint
+* [ ] Add gesture to activate a laser pointer
+* [ ] Build a GUI to customize gestures
+* [ ] Integration with Zoom/Teams presentations
+* [ ] Support for Google Slides and other presentation software
+* [ ] Voice command integration
+* [ ] Multi-hand gesture combinations
 
 ---
 
 ## 🔧 Configuration
-You can customize gesture sensitivity and controls by modifying the configuration in `config.py`:
+
+Customize gesture sensitivity and controls in `config.py`:
 
 ```python
 # Gesture sensitivity (0.1 - 1.0)
@@ -104,7 +144,9 @@ FRAME_HEIGHT = 480
 ---
 
 ## 🤝 Contributing
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+Contributions are welcome!
+To contribute:
 
 1. Fork the project
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -115,12 +157,14 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 ---
 
 ## 📄 License
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 🎬 Demo
-A comprehensive video demo will be added once the first stable prototype is ready.
+
+A demo video will be added once the first stable prototype is ready.
 
 ![Demo GIF placeholder](assets/demo.gif)
 *Demo coming soon...*
@@ -128,34 +172,48 @@ A comprehensive video demo will be added once the first stable prototype is read
 ---
 
 ## 🐛 Known Issues
-- Lighting conditions may affect gesture recognition accuracy
-- Currently optimized for single-user presentations
-- Requires stable internet connection for MediaPipe models
+
+* Lighting conditions may affect gesture recognition accuracy
+* Currently optimized for single-user presentations
+* MediaPipe model loading may take time on first run
 
 ---
 
 ## 💡 Vision
-This project started as an innovative idea to make presentations more **interactive and intuitive**. The long-term vision is to **integrate gesture-based control into Microsoft Office tools** and improve productivity during live or online presentations.
 
-Future possibilities include integration with AR/VR headsets, multi-user gesture control, and AI-powered presentation assistance.
+VisionSlide started as an idea to make presentations more **interactive and intuitive**.
+The long-term vision is to **integrate gesture-based control into Microsoft Office tools** and boost productivity in both live and online presentations.
+
+Future possibilities include AR/VR headset integration, multi-user gesture control, and AI-powered presentation assistance.
 
 ---
 
 ## 👤 Author
+
 **Nelson (Nelsbrowser)** – Passionate about AI, computer vision, and building innovative productivity tools.
 
-- GitHub: [@Nels-G](https://github.com/Nels-G)
-- Email: nelsgalley@gmail.com
+* GitHub: [@Nels-G](https://github.com/Nels-G)
+* Email: [nelsgalley@gmail.com](mailto:nelsgalley@gmail.com)
 
 ---
 
 ## 🙏 Acknowledgments
-- [MediaPipe](https://developers.google.com/mediapipe) team for excellent hand tracking models
-- [OpenCV](https://opencv.org/) community for computer vision tools
-- Microsoft PowerPoint for inspiration
+
+* [MediaPipe](https://developers.google.com/mediapipe) for excellent hand tracking models
+* [OpenCV](https://opencv.org/) community for computer vision tools
+* Microsoft PowerPoint for inspiration
 
 ---
 
 ## ⭐ Star this repo
-If you find this project interesting, please consider giving it a star! It helps others discover the project.
 
+If you find this project useful, please consider giving it a star ⭐ – it helps others discover the project!
+
+```
+
+---
+
+👉 Ce README correspond maintenant exactement à ton **architecture évolutive**, sans contradiction.  
+
+Veux-tu que je te prépare aussi un **requirements.txt minimal** (OpenCV, MediaPipe, PyAutoGUI, NumPy) pour que ton projet soit exécutable dès le clonage ?
+```
