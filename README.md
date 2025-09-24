@@ -278,7 +278,7 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 
 ## 👤 Author
 
-<div align="left">
+<div align="center">
 
 **Nelson Galley (Nels-G)**
 
@@ -316,6 +316,7 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 [Get Started](#quick-start) • [View Demo](#demo) • [Contribute](#contributing)
 
 </div>
+
 
 
 
