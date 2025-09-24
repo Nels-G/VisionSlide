@@ -144,8 +144,8 @@ Future possibilities include integration with AR/VR headsets, multi-user gesture
 ## 👤 Author
 **Nelson (Nelsbrowser)** – Passionate about AI, computer vision, and building innovative productivity tools.
 
-- GitHub: [@nelsbrowser](https://github.com/nelsbrowser)
-- Email: nelson@example.com
+- GitHub: [@Nels-G](https://github.com/Nels-G)
+- Email: nelsgalley@gmail.com
 
 ---
 
@@ -158,3 +158,4 @@ Future possibilities include integration with AR/VR headsets, multi-user gesture
 
 ## ⭐ Star this repo
 If you find this project interesting, please consider giving it a star! It helps others discover the project.
+
