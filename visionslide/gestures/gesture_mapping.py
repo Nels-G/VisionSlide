@@ -1,12 +1,12 @@
 """
-Gesture to action mapping and gesture state management.
+Gesture to action mapping.
 """
 import time
 from visionslide.config import *
 from visionslide.utils.logger import setup_logger
 
 class GestureMapper:
-    """Maps detected gestures to actions with state management."""
+    """Maps detected gestures to actions."""
     
     def __init__(self):
         self.logger = setup_logger('GestureMapper')
@@ -16,24 +16,31 @@ class GestureMapper:
         self.gesture_hold_duration = GESTURE_HOLD_DURATION
         self.gesture_cooldown = GESTURE_COOLDOWN
         
-        # Gesture to action mapping
         self.gesture_actions = {
             "point_right": "next_slide",
-            "point_left": "previous_slide",
-            "fist": "exit",
-            "open_hand": "none"  # No action, can be used for calibration
+            "point_left": "previous_slide", 
+            "open_hand": "exit"
         }
     
-    def update_gesture(self, gesture_name, hand_landmarks):
+    def update_gesture(self, gesture_name, hand_landmarks, gesture_detector):
         """
         Update current gesture and check if action should be triggered.
-        Returns action name if triggered, None otherwise.
         """
         current_time = time.time()
         
-        # Check cooldown period
+        # Check cooldown
         if current_time - self.last_action_time < self.gesture_cooldown:
             return None
+        
+        # Determine direction for pointing gesture
+        if gesture_name == "pointing" and hand_landmarks:
+            hand_pos = gesture_detector.get_hand_position(hand_landmarks)
+            if hand_pos == "left":
+                gesture_name = "point_left"
+            elif hand_pos == "right":
+                gesture_name = "point_right"
+            else:
+                return None  # Ignorer si main au centre
         
         # New gesture detected
         if gesture_name != self.current_gesture:
@@ -51,21 +58,3 @@ class GestureMapper:
             return action
         
         return None
-    
-    def determine_direction(self, gesture_name, hand_landmarks):
-        """
-        Determine gesture direction based on hand position.
-        For pointing gestures, determine if pointing left or right.
-        """
-        if not hand_landmarks or gesture_name not in ["point_right", "point_left"]:
-            return gesture_name
-        
-        # Use wrist position to determine hand orientation
-        wrist = hand_landmarks.landmark[0]  # Wrist landmark
-        
-        # Simple heuristic: if wrist is on the left side, pointing right
-        # This will be refined with actual hand orientation later
-        if wrist.x < 0.5:  # Left side of frame
-            return "point_right"
-        else:  # Right side of frame
-            return "point_left"
