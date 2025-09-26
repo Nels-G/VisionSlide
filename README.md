@@ -117,7 +117,7 @@ Download the standalone executable from [Releases page](https://github.com/Nels-
 
 ## Tech Stack
 
-<div align="center">
+<div align="left">
 
 | Technology | Purpose | Version |
 |------------|---------|---------|
@@ -318,3 +318,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Happy presenting!**
 
 </div>
+
