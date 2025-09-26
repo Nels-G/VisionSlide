@@ -9,16 +9,16 @@ import os
 # Add the visionslide package to path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from visionslide.camera.camera_stream import CameraStream
-from visionslide.gestures.gesture_detector import GestureDetector
-from visionslide.gestures.gesture_mapping import GestureMapper
-from visionslide.controls.ppt_controller import PPTController
-from visionslide.controls.os_controller import OSController
-from visionslide.config import *
+from .camera.camera_stream import CameraStream
+from .gestures.gesture_detector import GestureDetector
+from .gestures.gesture_mapping import GestureMapper
+from .controls.ppt_controller import PPTController
+from .controls.os_controller import OSController
+from .config import *
 
 def main():
     """Main application function."""
-    print("VisionSlide - PowerPoint Gesture Control")
+    print("🎭 VisionSlide - PowerPoint Gesture Control")
     print("=" * 40)
     print("Gesture Controls:")
     print("👉 Point RIGHT → Next slide")
@@ -38,14 +38,14 @@ def main():
     
     # Initialize camera
     if not camera.initialize():
-        print("Failed to initialize camera. Please check your webcam.")
+        print("❌ Failed to initialize camera. Please check your webcam.")
         return
     
     # Connect to PowerPoint
     ppt_controller.connect()
     
-    print("VisionSlide started successfully!")
-    print("Gesture controls are now active...")
+    print("✅ VisionSlide started successfully!")
+    print("🎮 Gesture controls are now active...")
     
     try:
         while camera.is_running():
@@ -57,7 +57,7 @@ def main():
             # Detect gestures
             processed_frame, hand_landmarks = gesture_detector.detect_gestures(frame)
             
-            gesture_name = None
+            gesture_name = "no_hand"  # Default value
             action_performed = False
             
             if hand_landmarks:
@@ -68,33 +68,39 @@ def main():
             cv2.putText(processed_frame, f"FPS: {fps}", (10, 30), 
                        cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
             
-            status_text = f"Gesture: {gesture_name if gesture_name else 'None'}"
+            status_text = f"Gesture: {gesture_name}"
             cv2.putText(processed_frame, status_text, (10, 60), 
                        cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)
             
-            # Check and execute actions
-            if gesture_name:
-                action = gesture_mapper.update_gesture(gesture_name, hand_landmarks, gesture_detector)
-                
-                if action:
-                    action_text = f"Action: {action}"
-                    cv2.putText(processed_frame, action_text, (10, 90), 
-                               cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
+            # Check and execute actions (with error handling)
+            if gesture_name and gesture_name not in ["unknown", "no_hand", "pointing"]:
+                try:
+                    action = gesture_mapper.update_gesture(gesture_name, hand_landmarks, gesture_detector)
                     
-                    # Execute the action
-                    if action == "next_slide":
-                        ppt_controller.next_slide()
-                        action_performed = True
-                    elif action == "previous_slide":
-                        ppt_controller.previous_slide()
-                        action_performed = True
-                    elif action == "exit":
-                        print("Exit gesture detected - stopping VisionSlide")
-                        break
+                    if action:
+                        action_text = f"Action: {action}"
+                        cv2.putText(processed_frame, action_text, (10, 90), 
+                                   cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
+                        
+                        # Execute the action
+                        if action == "next_slide":
+                            ppt_controller.next_slide()
+                            action_performed = True
+                        elif action == "previous_slide":
+                            ppt_controller.previous_slide()
+                            action_performed = True
+                        elif action == "exit":
+                            print("Exit gesture detected - stopping VisionSlide")
+                            break
+                except Exception as e:
+                    # Log error but continue running
+                    error_text = f"Error: {str(e)[:20]}..."
+                    cv2.putText(processed_frame, error_text, (10, 120), 
+                               cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
             
             # Show action confirmation
             if action_performed:
-                cv2.putText(processed_frame, "ACTION EXECUTED", (10, 120), 
+                cv2.putText(processed_frame, "ACTION EXECUTED", (10, 150), 
                            cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 255), 2)
             
             # Display frame
@@ -108,13 +114,15 @@ def main():
                 
     except KeyboardInterrupt:
         print("\nApplication interrupted by user")
+    except Exception as e:
+        print(f"Unexpected error: {e}")
     
     finally:
         # Cleanup
         gesture_detector.release()
         camera.release()
         cv2.destroyAllWindows()
-        print("VisionSlide stopped successfully")
+        print("✅ VisionSlide stopped successfully")
 
 if __name__ == "__main__":
     main()

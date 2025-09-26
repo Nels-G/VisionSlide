@@ -26,35 +26,34 @@ class GestureMapper:
         """
         Update current gesture and check if action should be triggered.
         """
-        current_time = time.time()
-        
-        # Check cooldown
-        if current_time - self.last_action_time < self.gesture_cooldown:
-            return None
-        
-        # Determine direction for pointing gesture
-        if gesture_name == "pointing" and hand_landmarks:
-            hand_pos = gesture_detector.get_hand_position(hand_landmarks)
-            if hand_pos == "left":
-                gesture_name = "point_left"
-            elif hand_pos == "right":
-                gesture_name = "point_right"
-            else:
-                return None  # Ignorer si main au centre
-        
-        # New gesture detected
-        if gesture_name != self.current_gesture:
-            self.current_gesture = gesture_name
-            self.gesture_start_time = current_time
-            return None
-        
-        # Same gesture held for required duration
-        if (current_time - self.gesture_start_time >= self.gesture_hold_duration and
-            gesture_name in self.gesture_actions):
+        try:
+            current_time = time.time()
             
-            action = self.gesture_actions[gesture_name]
-            self.last_action_time = current_time
-            self.logger.info(f"Gesture '{gesture_name}' triggered action: {action}")
-            return action
+            # Ignorer les gestes non reconnus
+            if gesture_name in ["unknown", "no_hand", "pointing", "error"]:
+                return None
+            
+            # Check cooldown period
+            if current_time - self.last_action_time < self.gesture_cooldown:
+                return None
+            
+            # New gesture detected
+            if gesture_name != self.current_gesture:
+                self.current_gesture = gesture_name
+                self.gesture_start_time = current_time
+                return None
+            
+            # Same gesture held for required duration
+            if (current_time - self.gesture_start_time >= self.gesture_hold_duration and
+                gesture_name in self.gesture_actions):
+                
+                action = self.gesture_actions[gesture_name]
+                self.last_action_time = current_time
+                self.logger.info(f"Gesture '{gesture_name}' triggered action: {action}")
+                return action
+            
+            return None
         
-        return None
+        except Exception as e:
+            self.logger.error(f"Error in gesture mapping: {e}")
+            return None
