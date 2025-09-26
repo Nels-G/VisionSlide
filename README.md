@@ -195,7 +195,7 @@ A: Currently, VisionSlide only supports PowerPoint. Google Slides support is pla
 <details>
 <summary><strong>Q: Can I use it in video conferences?</strong></summary>
 
-A: Yes! It works with Zoom, Teams, and other conferencing tools when sharing your PowerPoint window.
+A: Yes! For now, it works in PowerPoint presentations. You can use it during video conferences (Zoom, Teams, Meet, etc.) by sharing your PowerPoint window. Support for other platforms is coming soon.
 </details>
 
 <details>
@@ -318,4 +318,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Happy presenting!**
 
 </div>
+
 
