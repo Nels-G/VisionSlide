@@ -1,78 +1,75 @@
-# VisionSlide
+# VisionSlide 🚀
 
-<div align="letft">
+<div align="center">
 
 ![Python](https://img.shields.io/badge/python-v3.9+-blue.svg)
 ![OpenCV](https://img.shields.io/badge/OpenCV-4.8+-green.svg)
 ![MediaPipe](https://img.shields.io/badge/MediaPipe-0.10+-orange.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Status](https://img.shields.io/badge/status-active-success.svg)
+![Platform](https://img.shields.io/badge/platform-windows%20%7C%20macOS%20%7C%20linux-lightgrey.svg)
 
 **Control PowerPoint presentations with hand gestures using AI-powered computer vision**
 
-[Demo](#demo) • [Features](#features) • [Installation](#installation) • [Architecture](#architecture) • [Contributing](#contributing)
+[🎬 Demo](#demo) • [✨ Features](#features) • [🚀 Installation](#installation) • [⚡ Quick Start](#quick-start) • [🤝 Contributing](#contributing)
 
 </div>
 
 ---
 
-## Overview
+## 📖 Overview
 
-**VisionSlide** revolutionizes presentation control by eliminating the need for traditional clickers. Using advanced computer vision and machine learning, it enables seamless PowerPoint navigation through intuitive hand gestures—perfect for modern presentations, remote meetings, and interactive demos.
+VisionSlide revolutionizes presentation control by eliminating the need for traditional clickers. Using advanced computer vision and machine learning, it enables seamless PowerPoint navigation through intuitive hand gestures—perfect for modern presentations, remote meetings, and interactive demos.
 
-### Why VisionSlide?
-- **Hands-free control** → More natural and engaging presentations
-- **AI-powered accuracy** → Reliable gesture recognition using MediaPipe
-- **Cross-platform support** → Works on Windows, macOS, and Linux
-- **Easy integration** → Drop-in solution for existing PowerPoint workflows
+### 🎯 Why VisionSlide?
+
+- **🙌 Hands-free control** → More natural and engaging presentations
+- **🧠 AI-powered accuracy** → Reliable gesture recognition using MediaPipe
+- **🌐 Cross-platform support** → Works on Windows, macOS, and Linux
+- **🔌 Easy integration** → Drop-in solution for existing PowerPoint workflows
+- **📷 No hardware required** → Uses your existing webcam
 
 ---
 
 ## ✨ Features
 
-### Current Features (MVP)
-- **Smart gesture recognition** → Next/Previous slide navigation
-- **Real-time hand tracking** → Sub-100ms response time
-- **PowerPoint integration** → Direct keyboard simulation
-- **Configurable sensitivity** → Customizable gesture thresholds
-- **Multi-platform support** → Windows, macOS, Linux compatible
+### Current Features
 
-### Planned Features
-- **Laser pointer simulation** → Virtual pointing during presentations
-- **Zoom/Teams integration** → Screen sharing compatibility
-- **Voice commands** → Hybrid voice + gesture control
-- **Custom gesture mapping** → User-defined gesture combinations
-- **Google Slides support** → Extended presentation platform coverage
+| Feature | Description |
+|---------|-------------|
+| 🤏 **Smart gesture recognition** | Next/Previous slide navigation |
+| ⚡ **Real-time hand tracking** | Fast response time with minimal latency |
+| 📊 **PowerPoint integration** | Direct keyboard simulation |
+| ⚙️ **Configurable sensitivity** | Customizable gesture thresholds |
+| 🖥️ **Multi-platform support** | Windows, macOS, Linux compatible |
+| 🛠️ **Simple setup** | Easy installation process |
 
----
+### 🎮 Gesture Controls
 
-## 🛠️ Tech Stack
-
-<div align="left">
-
-| Technology | Purpose | Version |
-|------------|---------|---------|
-| **Python** | Core language | 3.9+ |
-| **OpenCV** | Video capture & processing | 4.8+ |
-| **MediaPipe** | Hand tracking & ML models | 0.10+ |
-| **PyAutoGUI** | System automation | Latest |
-| **NumPy** | Mathematical operations | Latest |
-
-</div>
+| Gesture | Action | Description |
+|---------|--------|-------------|
+| 👉 | **Point RIGHT** | Navigate to next slide |
+| 👈 | **Point LEFT** | Navigate to previous slide |
+| ✋ | **Open hand** | Exit application |
 
 ---
 
-## Quick Start
+## 🚀 Installation
 
-### Prerequisites
+### Method 1: Simple Installation (Recommended)
+
 ```bash
-✅ Python 3.9 or higher
-✅ Webcam (built-in or external)
-✅ Microsoft PowerPoint
-✅ Internet connection (for initial model download)
+# Clone the repository
+git clone https://github.com/Nels-G/visionslide.git
+cd visionslide
+
+# Install and run with one command
+pip install -e .
+visionslide
 ```
 
-### Installation
+### Method 2: Traditional Python Setup
+
 ```bash
 # Clone the repository
 git clone https://github.com/Nels-G/visionslide.git
@@ -82,81 +79,77 @@ cd visionslide
 pip install -r requirements.txt
 
 # Run the application
-python app.py
+python -m visionslide.app
 ```
 
-### Usage
-1. **Launch PowerPoint** and open your presentation
-2. **Start VisionSlide** → `python app.py`
-3. **Position yourself** in camera view (arm's length)
-4. **Use gestures**:
-   - 👉 **Next slide**: Point right with index finger
-   - 👈 **Previous slide**: Point left with index finger
-   - ✊ **Exit**: Close fist and hold (2 seconds)
+### Method 3: For End Users (No Python required)
+
+Download the standalone executable from [Releases page](https://github.com/Nels-G/visionslide/releases)
 
 ---
 
-## 📁 Architecture
+## ⚡ Quick Start
+
+### Prerequisites
+
+- ✅ Webcam (built-in or external)
+- ✅ Microsoft PowerPoint
+- ✅ Python 3.9+ (for development version)
+
+### Usage Steps
+
+1. **Install VisionSlide** using one of the methods above
+2. **Open PowerPoint** and start your slideshow (`F5`)
+3. **Launch VisionSlide** → `visionslide`
+4. **Use gestures** in front of your webcam:
+   - 👉 Point right → Next slide
+   - 👈 Point left → Previous slide
+   - ✋ Open hand → Exit application
+
+### 💡 Pro Tips
+
+- Position yourself arm's length from the camera
+- Ensure good lighting for better detection
+- Hold gestures for 0.7 seconds to activate
+- Press `q` or `ESC` to quit anytime
+
+---
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+| Technology | Purpose | Version |
+|------------|---------|---------|
+| ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) | Core language | 3.9+ |
+| ![OpenCV](https://img.shields.io/badge/OpenCV-27338e?style=for-the-badge&logo=OpenCV&logoColor=white) | Video capture & processing | 4.8+ |
+| ![MediaPipe](https://img.shields.io/badge/MediaPipe-0167C4?style=for-the-badge&logo=google&logoColor=white) | Hand tracking & ML models | 0.10+ |
+| PyAutoGUI | System automation | Latest |
+| NumPy | Mathematical operations | Latest |
+
+</div>
+
+---
+
+## 📁 Project Structure
 
 ```
 visionslide/
 ├── 📱 app.py                    # Application entry point
 ├── 📋 requirements.txt          # Dependencies
-├── 📖 README.md                # Documentation
-├── ⚙️  setup.py                 # Package configuration
+├── 📖 README.md                 # Documentation
+├── ⚙️ setup.py                  # Package configuration
 │
-├── 🎯 visionslide/             # Core package
-│   ├── 🔧 config.py            # Configuration settings
-│   ├── 📷 camera/              # Camera management
-│   │   └── camera_stream.py    # Video capture logic
-│   ├── 🤏 gestures/            # Gesture recognition
-│   │   ├── gesture_detector.py # ML-based detection
-│   │   └── gesture_mapping.py  # Gesture → Action mapping
-│   ├── 🎮 controls/            # System controllers
-│   │   ├── ppt_controller.py   # PowerPoint integration
-│   │   ├── os_controller.py    # OS-level automation
-│   │   └── zoom_controller.py  # Video conferencing
-│   └── 🛠️ utils/               # Utilities
-│       ├── logger.py           # Logging system
-│       └── helpers.py          # Helper functions
+├── 🎯 visionslide/              # Core package
+│   ├── 🔧 config.py             # Configuration settings
+│   ├── 📷 camera/               # Camera management
+│   ├── 🤏 gestures/             # Gesture recognition
+│   ├── 🎮 controls/             # System controllers
+│   └── 🛠️ utils/                # Utilities
 │
-├── 🧪 tests/                   # Unit tests
-├── 📸 assets/                  # Media files
-└── 📚 docs/                    # Documentation
+├── 🧪 tests/                    # Unit tests
+└── 📸 assets/                   # Media files
 ```
-
----
-
-## ⚡ Performance & Accuracy
-
-<div align="left">
-
-| Metric | Value | Notes |
-|--------|-------|-------|
-| **Response Time** | <100ms | Gesture → Action |
-| **Accuracy Rate** | 95%+ | Optimal lighting conditions |
-| **CPU Usage** | <15% | Intel i5 equivalent |
-| **Memory Usage** | <200MB | Including ML models |
-
-</div>
-
----
-
-## 🎬 Demo
-
-<div align="left">
-
-*🎥 Demo video coming soon...*
-
-![Demo Placeholder](assets/demo.gif)
-
-**Live Demo Features:**
-- Real-time gesture recognition
-- PowerPoint slide navigation
-- Performance metrics overlay
-- Multi-gesture combinations
-
-</div>
 
 ---
 
@@ -167,52 +160,66 @@ Customize VisionSlide behavior in `visionslide/config.py`:
 ```python
 # Gesture Recognition Settings
 GESTURE_CONFIDENCE_THRESHOLD = 0.7    # Detection sensitivity (0.1-1.0)
-GESTURE_HOLD_DURATION = 1.5          # Seconds to hold gesture
-GESTURE_COOLDOWN = 0.8               # Prevent rapid-fire gestures
+GESTURE_HOLD_DURATION = 0.7          # Seconds to hold gesture
+GESTURE_COOLDOWN = 0.4               # Prevent rapid-fire gestures
 
 # Camera Configuration
 CAMERA_INDEX = 0                     # Default camera
 FRAME_WIDTH = 640                    # Video resolution
 FRAME_HEIGHT = 480
 FPS_TARGET = 30                      # Target frame rate
-
-# Performance Tuning
-MODEL_COMPLEXITY = 1                 # MediaPipe model complexity (0-2)
-MIN_DETECTION_CONFIDENCE = 0.7       # Hand detection threshold
-MIN_TRACKING_CONFIDENCE = 0.5        # Hand tracking threshold
 ```
 
 ---
 
-## 🏗️ Development Roadmap
+## 🎬 Demo
 
-<div align="left">
+<div align="center">
 
-### Phase 1: Foundation ✅
-- [x] Basic gesture recognition
-- [x] PowerPoint integration
-- [x] Cross-platform support
-- [x] Configuration system
+*Real-time hand tracking and gesture recognition in action*
 
-### Phase 2: Enhancement 🚧
-- [ ] Advanced gesture combinations
-- [ ] GUI configuration interface
-- [ ] Performance optimizations
-- [ ] Comprehensive testing suite
-
-### Phase 3: Integration 📋
-- [ ] Zoom/Teams compatibility
-- [ ] Google Slides support
-- [ ] Voice command hybrid
-- [ ] AR/VR exploration
-
-### Phase 4: Intelligence 🔮
-- [ ] AI-powered gesture prediction
-- [ ] Contextual action suggestions
-- [ ] Multi-user presentations
-- [ ] Analytics dashboard
+![Demo GIF](assets/demo.gif)
 
 </div>
+
+---
+
+## ❓ Frequently Asked Questions
+
+<details>
+<summary><strong>Q: Does it work with Google Slides?</strong></summary>
+
+A: Currently, VisionSlide only supports PowerPoint. Google Slides support is planned for future releases.
+</details>
+
+<details>
+<summary><strong>Q: Can I use it in video conferences?</strong></summary>
+
+A: Yes! It works with Zoom, Teams, and other conferencing tools when sharing your PowerPoint window.
+</details>
+
+<details>
+<summary><strong>Q: What's the minimum system requirements?</strong></summary>
+
+A: Any modern computer with a webcam and PowerPoint installed. No special hardware required.
+</details>
+
+<details>
+<summary><strong>Q: How accurate is the gesture recognition?</strong></summary>
+
+A: Very accurate in good lighting conditions. Works best with clear hand gestures.
+</details>
+
+---
+
+## 🐛 Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| "Camera not detected" | Check if another application is using the camera |
+| Gestures not recognized | Improve lighting and ensure clear hand visibility |
+| PowerPoint not responding | Ensure PowerPoint is in slideshow mode (`F5`) |
+| Installation errors | Make sure you have Python 3.9+ installed |
 
 ---
 
@@ -220,59 +227,51 @@ MIN_TRACKING_CONFIDENCE = 0.5        # Hand tracking threshold
 
 We welcome contributions from developers, designers, and presentation enthusiasts!
 
-### How to Contribute
-```bash
-1. 🍴 Fork the repository
-2. 🌿 Create feature branch: git checkout -b feature/amazing-feature
-3. 💻 Make your changes
-4. ✅ Add tests for new functionality
-5. 📝 Update documentation
-6. 🚀 Submit pull request
-```
+### Quick Contribution Guide
 
-### Development Setup
 ```bash
-# Clone your fork
+# 1. Fork and clone the repository
 git clone https://github.com/your-username/visionslide.git
 
-# Install dev dependencies
-pip install -r requirements-dev.txt
+# 2. Set up development environment
+pip install -e ".[dev]"
 
-# Run tests
+# 3. Make your changes and test
 python -m pytest tests/
 
-# Check code style
-black visionslide/ tests/
-flake8 visionslide/ tests/
+# 4. Submit a pull request
 ```
 
-### Areas We Need Help With
-- 🎨 **UI/UX Design** → Configuration interface
+### Areas Where We Need Help
+
+- 🎨 **UI/UX Design** → Better user interface
+- 🌐 **Multi-language** → Internationalization support
+- 📱 **Mobile App** → Companion mobile controller
 - 🧪 **Testing** → Cross-platform compatibility
 - 📖 **Documentation** → Tutorials and guides
-- 🌐 **Translations** → Multi-language support
-- 🔧 **Integrations** → New presentation platforms
+
+---
+
+## 🔄 Changelog
+
+### v1.0.0 (Current)
+- ✅ Basic gesture recognition (point left/right, open hand)
+- ✅ PowerPoint integration
+- ✅ Real-time webcam processing
+- ✅ Cross-platform support
+- ✅ Easy installation process
+
+### Coming Soon
+- 🔄 Google Slides support
+- 🔄 Advanced gesture combinations
+- 🔄 GUI configuration interface
+- 🔄 Performance optimizations
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License - see [LICENSE](LICENSE) for details.
-
----
-
-## 🏆 Recognition & Impact
-
-### Use Cases
-- **Corporate presentations** → Professional meetings and pitches
-- **Educational lectures** → Interactive classroom experiences
-- **Remote presentations** → Enhanced video conferencing
-- **Accessibility** → Alternative control for mobility-impaired users
-
-### Technical Achievements
-- **Real-time ML inference** → Optimized MediaPipe pipeline
-- **Cross-platform automation** → Unified control interface
-- **Modular architecture** → Extensible and maintainable code
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
@@ -284,8 +283,8 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 
 *Passionate about AI, Computer Vision, and Developer Productivity*
 
-[![GitHub](https://img.shields.io/badge/GitHub-Nels--G-black?style=flat&logo=github)](https://github.com/Nels-G)
-[![Email](https://img.shields.io/badge/Email-nelsgalley@gmail.com-red?style=flat&logo=gmail)](mailto:nelsgalley@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-Nels--G-black?style=for-the-badge&logo=github)](https://github.com/Nels-G)
+[![Email](https://img.shields.io/badge/Email-nelsgalley@gmail.com-red?style=for-the-badge&logo=gmail)](mailto:nelsgalley@gmail.com)
 
 *"Building the future of human-computer interaction, one gesture at a time."*
 
@@ -295,29 +294,27 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 
 ## 🙏 Acknowledgments
 
-- **[MediaPipe Team](https://developers.google.com/mediapipe)** → Exceptional hand tracking models
-- **[OpenCV Community](https://opencv.org/)** → Robust computer vision foundation
-- **[Microsoft](https://www.microsoft.com/en-us/microsoft-365/powerpoint)** → PowerPoint integration inspiration
+- **MediaPipe Team** → Exceptional hand tracking models
+- **OpenCV Community** → Robust computer vision foundation
 - **Open Source Community** → Continuous inspiration and support
 
 ---
 
 <div align="center">
 
-## ⭐ Star This Repository
+### ⭐ Support the Project
 
-**Found VisionSlide useful?** Give it a star ⭐ to help others discover this project!
+*Enjoying VisionSlide? Help us grow by giving a star!* ⭐
 
 [![GitHub stars](https://img.shields.io/github/stars/Nels-G/visionslide?style=social)](https://github.com/Nels-G/visionslide/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/Nels-G/visionslide?style=social)](https://github.com/Nels-G/visionslide/network)
+[![GitHub forks](https://img.shields.io/github/forks/Nels-G/visionslide?style=social)](https://github.com/Nels-G/visionslide/network/members)
 
 **Ready to revolutionize your presentations?** 🚀
 
-[Get Started](#quick-start) • [View Demo](#demo) • [Contribute](#contributing)
+[Get Started](https://github.com/Nels-G/visionslide/releases) • [Report Issue](https://github.com/Nels-G/visionslide/issues) • [Contribute](https://github.com/Nels-G/visionslide/pulls)
+
+---
+
+**Happy presenting!** 🎤✨
 
 </div>
-
-
-
-
-
